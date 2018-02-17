@@ -1,0 +1,24 @@
+es:
+  clients:
+    index:
+      client_list: 'Listado clientes'
+      new_client: 'Nuevo cliente'
+  common:
+    new: 'Nuevo'
+    edit: 'Editar'
+    delete: 'Eliminar'
+    back: 'Regresar'
+    save: 'Guardar'
+    cancel: 'Cancelar'
+  activerecord:
+    models:
+      client: 'cliente'
+    attributes:
+      client:
+        name: 'Nombre'
+        last_name: 'Apellido'
+        street: 'Calle'
+        colony: 'Colonia'
+        number: 'Numero'
+        telephone: "Telefono"
+        birthday: "Fecha nacimiento"

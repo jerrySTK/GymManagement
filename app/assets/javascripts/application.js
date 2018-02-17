@@ -14,4 +14,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require javascripts/bootstrap
+//= require javascripts/startbootstrap-sb-admin/sb-admin
 //= require_tree .
