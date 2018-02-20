@@ -2,26 +2,4 @@
 <h1>Registro de pago</h1>
 <h4><%=@client.full_name%></h4>
 <hr>
-<%= form_for [@client,@payment] do |f|%>
-
-  <% if @payment.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% @payment.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-    <div class="form-group">
-        <%= f.label :duration%>
-        <%= f.text_field :duration, class:'form-control'%>
-    </div>
-    <div class="form-group">
-        <%= f.label :amount%>
-        <%= f.text_field :amount, class:'form-control'%>
-    </div>
-    <div class="form-group">
-        <%= f.submit class:'btn btn-primary' %>
-    </div>
-<% end %>
+<%= render 'form' %>

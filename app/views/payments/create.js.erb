@@ -1,0 +1,8 @@
+$('#paymentModal').modal('hide');
+
+$.ajax({
+    url: '<%= client_payments_path %>' + '.js',
+    contentType: "text/javascript"
+}).done(function(response){
+    $('#paymentsList').html(response);
+});
