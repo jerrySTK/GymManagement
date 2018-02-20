@@ -1,5 +1,12 @@
 <h1><%=t('payments.menu_label')%> <small><%=@client.full_name%></small></h1>
 <br/>
+
+<div class="row">
+    <div class="col-sm-12">
+        <%= link_to t('common.new'), new_client_payment_path(@client), class: "btn btn-primary"%>
+    </div>
+</div>
+<br/>
 <div class="row">
     <div class="col-sm-12">
         <table class="table table-hover">
@@ -14,10 +21,10 @@
             <tbody>
                 <%@client.payments.each do | payment |%>
                     <tr>
-                        <th><%=payment.created_at%></th>
-                        <th><%=payment.duration%></th>
-                        <th><%=payment.amount%></th>
-                        <th></th>
+                        <td><%=payment.created_at%></td>
+                        <td><%=payment.duration%></td>
+                        <td><%=payment.amount%></td>
+                        <td></td>
                     </tr>
                 <%end%>
             </tbody>
