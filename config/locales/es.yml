@@ -3,6 +3,15 @@ es:
     index:
       client_list: 'Listado clientes'
       new_client: 'Nuevo cliente'
+    edit:
+      edit_client: 'Editar cliente'
+    new:
+      new_client: 'Nuevo cliente'
+    menu_label: 'Clientes'
+  payments:
+    index:
+      payment_list: 'Lista de pagos'
+    menu_label: 'Pagos'
   common:
     new: 'Nuevo'
     edit: 'Editar'
@@ -10,6 +19,8 @@ es:
     back: 'Regresar'
     save: 'Guardar'
     cancel: 'Cancelar'
+    spanish: 'Español'
+    english: 'Ingles'
   activerecord:
     models:
       client: 'cliente'

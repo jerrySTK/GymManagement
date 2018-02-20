@@ -6,8 +6,8 @@
 <table class="table table-hover">
     <thead class="thead-ligh">
     <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Last name</th>
+        <th scope="col"><%= Client.human_attribute_name('name') %></th>
+        <th scope="col"><%= Client.human_attribute_name('last_name') %></th>
         <th scope="col"></th>
     </tr>
     <thead>
@@ -16,7 +16,10 @@
         <tr>
             <td><%=client.name%></td>
             <td><%=client.last_name%></td>
-            <td><%=link_to t('common.edit'), edit_client_path(client)%></td>
+            <td>
+                <%=link_to t('common.edit'), edit_client_path(client)%> |
+                <%=link_to t('payments.menu_label'), client_payments_path(client)%>
+            </td>
         </tr>
     <% end %>
     </tbody>
