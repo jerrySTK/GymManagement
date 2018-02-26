@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219201343) do
+ActiveRecord::Schema.define(version: 20180226233600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fee_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fees", force: :cascade do |t|
+    t.bigint "fee_type_id"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fee_type_id"], name: "index_fees_on_fee_type_id"
+  end
 
   create_table "payments", force: :cascade do |t|
     t.decimal "amount"
@@ -21,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180219201343) do
     t.bigint "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fee_id"
+    t.index ["fee_id"], name: "index_payments_on_fee_id"
     t.index ["person_id"], name: "index_payments_on_person_id"
   end
 
@@ -37,5 +53,7 @@ ActiveRecord::Schema.define(version: 20180219201343) do
     t.datetime "birthday"
   end
 
+  add_foreign_key "fees", "fee_types"
+  add_foreign_key "payments", "fees"
   add_foreign_key "payments", "people"
 end
