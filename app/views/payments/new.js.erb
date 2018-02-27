@@ -1,2 +1,5 @@
 $('#paymentFormContainer').html('<%=j render 'form' %>');
 $('#paymentModal').modal('show');
+$('#payment_fee_id').on('click',function(e){
+    $('#payment_amount').val($(this).find('option:selected').data('price'));
+});

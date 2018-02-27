@@ -11,7 +11,7 @@
                 <%@client.payments.each do | payment |%>
                     <tr>
                         <td><%=payment.created_at%></td>
-                        <td><%=payment.duration%></td>
+                        <td><%=payment.fee.fee_type.name%></td>
                         <td><%=payment.amount%></td>
                         <td></td>
                     </tr>

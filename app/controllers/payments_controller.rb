@@ -11,6 +11,7 @@ class PaymentsController < ApplicationController
   def new
     @client= Client.find(params[:client_id])
     @payment = @client.payments.build()
+    @fees = Fee.includes('fee_type').all.order('fee_types.name')
 
     respond_to do |format|
       format.html
@@ -21,6 +22,8 @@ class PaymentsController < ApplicationController
   def create
     @client = Client.find(params[:client_id])
     @payment = @client.payments.build(payment_params)
+    @fees = Fee.includes('fee_type').all.order('fee_types.name')
+    
     if @payment.save
       respond_to  do |format|
         format.html { redirect_to client_payments_path(@client) }
@@ -37,6 +40,6 @@ class PaymentsController < ApplicationController
 
   private 
     def payment_params
-      params.require(:payment).permit(:amount,:duration,:person_id)
+      params.require(:payment).permit(:amount,:fee_id,:person_id)
     end
 end
