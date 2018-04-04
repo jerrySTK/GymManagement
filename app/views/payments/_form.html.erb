@@ -17,6 +17,10 @@
         <%= f.text_field :amount, class:'form-control'%>
     </div>
     <div class="form-group">
+        <%= f.label :init_date%>
+        <%= f.date_field :init_date, {:class=>'form-control'}%>
+    </div>
+    <div class="form-group">
         <%= f.submit class:'btn btn-primary' %>
     </div>
 <% end %>

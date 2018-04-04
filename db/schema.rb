@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227004941) do
+ActiveRecord::Schema.define(version: 20180315223019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180227004941) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "duration"
     t.index ["fee_type_id"], name: "index_fees_on_fee_type_id"
   end
 
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 20180227004941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "fee_id"
+    t.date "init_date"
+    t.integer "duration"
     t.index ["fee_id"], name: "index_payments_on_fee_id"
     t.index ["person_id"], name: "index_payments_on_person_id"
   end

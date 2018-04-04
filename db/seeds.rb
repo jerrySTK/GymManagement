@@ -15,6 +15,6 @@ fWeekly = FeeType.create(name:'Semanal')
 fMonthly = FeeType.create(name:'Mensual')
 
 Fee.create(price: 25, fee_type: fVisit )
-Fee.create(price: 110, fee_type: fWeekly )
-Fee.create(price: 240, fee_type: fMonthly )
+Fee.create(price: 110, duration:7, fee_type: fWeekly )
+Fee.create(price: 240, duration:30,  fee_type: fMonthly )
 
