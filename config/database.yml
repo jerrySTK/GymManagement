@@ -7,9 +7,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
   pool: 5
   username: postgres
-  password: sitekcode
+  password: 
 
 development:
   <<: *default
